@@ -1,7 +1,3 @@
-/* =========================
-   CONFIGURAÇÕES
-========================= */
-
 * {
     margin: 0;
     padding: 0;
@@ -9,13 +5,10 @@
 }
 
 body {
-
     min-height: 100vh;
 
     display: flex;
-
     justify-content: center;
-
     align-items: center;
 
     padding: 20px;
@@ -25,22 +18,12 @@ body {
     color: white;
 
     background:
-        radial-gradient(
-            circle at top,
-            #073b55,
-            #020711 55%,
-            #010402
-        );
-
+        radial-gradient(circle at top, #063b52, #020711 55%, #010402);
 }
 
-
-/* =========================
-   EFEITO DE FUNDO
-========================= */
+/* Grade futurista */
 
 body::before {
-
     content: "";
 
     position: fixed;
@@ -50,26 +33,19 @@ body::before {
     pointer-events: none;
 
     background-image:
-
         linear-gradient(
-            rgba(0, 255, 150, 0.035) 1px,
+            rgba(0, 255, 150, 0.04) 1px,
             transparent 1px
         ),
-
         linear-gradient(
             90deg,
-            rgba(0, 255, 150, 0.035) 1px,
+            rgba(0, 255, 150, 0.04) 1px,
             transparent 1px
         );
 
     background-size: 45px 45px;
-
 }
 
-
-/* =========================
-   PAINEL PRINCIPAL
-========================= */
 
 .container {
 
@@ -81,7 +57,7 @@ body::before {
 
     text-align: center;
 
-    background: rgba(0, 5, 12, 0.88);
+    background: rgba(0, 5, 12, 0.92);
 
     border: 2px solid #00d084;
 
@@ -89,29 +65,23 @@ body::before {
 
     box-shadow:
         0 0 15px rgba(0, 255, 150, 0.35),
-        0 0 50px rgba(0, 120, 255, 0.12);
-
+        0 0 50px rgba(0, 120, 255, 0.15);
 }
 
 
-/* =========================
-   TÍTULO
-========================= */
-
 h1 {
 
-    margin-bottom: 25px;
+    margin-bottom: 30px;
 
     color: #00ff99;
 
-    font-size: 42px;
+    font-size: 44px;
 
     letter-spacing: 8px;
 
     text-shadow:
         0 0 8px #00ff99,
         0 0 20px #007744;
-
 }
 
 
@@ -124,77 +94,21 @@ h2 {
 }
 
 
-/* =========================
-   HISTÓRIA
-========================= */
-
 p {
 
     margin-bottom: 20px;
 
     font-size: 20px;
 
-    line-height: 1.8;
+    line-height: 1.7;
 
     text-align: justify;
-
 }
 
-
-/* =========================
-   CAMPO DE NOME
-========================= */
-
-input {
-
-    width: 80%;
-
-    max-width: 400px;
-
-    padding: 13px;
-
-    margin: 10px 0 20px;
-
-    border: 2px solid #006b54;
-
-    border-radius: 8px;
-
-    outline: none;
-
-    background: #071522;
-
-    color: white;
-
-    font-family: "Times New Roman", serif;
-
-    font-size: 18px;
-
-}
-
-
-input:focus {
-
-    border-color: #00ff99;
-
-    box-shadow: 0 0 10px rgba(0,255,150,.4);
-
-}
-
-
-input::placeholder {
-
-    color: #78909c;
-
-}
-
-
-/* =========================
-   BOTÕES
-========================= */
 
 button {
 
-    padding: 13px 25px;
+    padding: 14px 25px;
 
     margin: 10px;
 
@@ -213,7 +127,6 @@ button {
     font-size: 18px;
 
     transition: 0.3s;
-
 }
 
 
@@ -225,14 +138,10 @@ button:hover {
 
     transform: translateY(-3px);
 
-    box-shadow: 0 0 18px rgba(0,255,150,.6);
-
+    box-shadow:
+        0 0 18px rgba(0, 255, 150, 0.6);
 }
 
-
-/* =========================
-   ESCOLHAS
-========================= */
 
 .botoes {
 
@@ -243,7 +152,6 @@ button:hover {
     gap: 15px;
 
     margin-top: 30px;
-
 }
 
 
@@ -252,13 +160,16 @@ button:hover {
     flex: 1;
 
     max-width: 350px;
-
 }
 
 
-/* =========================
-   CELULAR
-========================= */
+.escondido {
+
+    display: none;
+}
+
+
+/* Celular */
 
 @media (max-width: 700px) {
 
@@ -270,7 +181,7 @@ button:hover {
 
     h1 {
 
-        font-size: 32px;
+        font-size: 34px;
 
         letter-spacing: 5px;
 
@@ -278,7 +189,7 @@ button:hover {
 
     h2 {
 
-        font-size: 24px;
+        font-size: 25px;
 
     }
 
@@ -286,15 +197,7 @@ button:hover {
 
         font-size: 18px;
 
-        line-height: 1.7;
-
         text-align: left;
-
-    }
-
-    input {
-
-        width: 100%;
 
     }
 
