@@ -202,14 +202,18 @@ function carregarEtapa() {
     }
 
 
-    btn1.onclick = function() {
+    btn1.onclick = function(<button onclick="location.reload()">
+    Jogar novamente
+</button>) {
 
         escolher(true);
 
     };
 
 
-    btn2.onclick = function() {
+    btn2.onclick = function(<button onclick="location.reload()">
+    Jogar novamente
+</button>) {
 
         escolher(false);
 
@@ -453,3 +457,6 @@ function finalizar() {
     document.getElementById("resultado").innerHTML = mensagem;
 
 }
+<button onclick="location.reload()">
+    Jogar novamente
+</button>
