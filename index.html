@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Projeto NEXUS</title>
+
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+    <div class="container">
+
+        <h1>NEXUS</h1>
+
+        <!-- TELA INICIAL -->
+
+        <div id="inicio">
+
+            <h2>O Futuro da Humanidade</h2>
+
+            <p>
+                Uma nova inteligência artificial está mudando o mundo.
+                Mas até onde podemos confiar nela?
+            </p>
+
+            <p>
+                Digite seu nome para iniciar a missão:
+            </p>
+
+            <input
+                type="text"
+                id="nome"
+                placeholder="Seu nome">
+
+            <br>
+
+            <button onclick="iniciar()">
+                Iniciar missão
+            </button>
+
+        </div>
+
+
+        <!-- JOGO -->
+
+        <div id="jogo" style="display:none;">
+
+            <h2 id="titulo"></h2>
+
+            <p id="texto"></p>
+
+            <div class="botoes">
+
+                <button id="btn1"></button>
+
+                <button id="btn2"></button>
+
+            </div>
+
+        </div>
+
+
+        <!-- RESULTADO -->
+
+        <div id="fim" style="display:none;">
+
+            <h2>MISSÃO ENCERRADA</h2>
+
+            <p id="resultado"></p>
+
+            <button onclick="location.reload()">
+                Jogar novamente
+            </button>
+
+        </div>
+
+    </div>
+
+
+    <script src="script.js"></script>
+
+</body>
+
+</html>
