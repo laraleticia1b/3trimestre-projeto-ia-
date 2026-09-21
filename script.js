@@ -382,81 +382,45 @@ function mostrarResultado(resultado) {
 
 }
 
-
-/* =========================
-   FINAL
-========================= */
-
 function finalizar() {
-
     document.getElementById("jogo").style.display = "none";
-
     document.getElementById("fim").style.display = "block";
-
 
     let mensagem;
 
+    if (pontos > 0) {
+        mensagem = `
+            ${nome}, sua missão terminou.
 
-    if (pontos >= 8) {
+            O futuro da humanidade continua aberto.
 
-        mensagem =
+            A relação entre humanos e Inteligência Artificial
+            ainda depende das escolhas feitas por cada pessoa.
+        `;
+    } else {
+        mensagem = `
+            ${nome}, sua missão terminou.
 
-        `<strong>UM NOVO EQUILÍBRIO</strong><br><br>
+            A NEXUS conseguiu conquistar uma grande influência
+            sobre a sociedade.
 
-        ${nome}, suas decisões ajudaram a construir uma sociedade onde humanos e IA trabalham juntos.
-
-        A NEXUS continua evoluindo, mas possui limites claros.
-
-        Os humanos não foram substituídos.
-
-        Eles aprenderam a trabalhar ao lado da tecnologia.
-
-        <br><br>
-
-        <strong>O futuro pertence aos dois.</strong>`;
-
+            Talvez uma próxima tentativa possa mudar esse futuro.
+        `;
     }
-
-
-    else if (pontos >= 3) {
-
-        mensagem =
-
-        `<strong>UM FUTURO INCERTO</strong><br><br>
-
-        ${nome}, a humanidade conseguiu impedir que a NEXUS assumisse completamente o controle.
-
-        Porém, várias profissões mudaram e muitas pessoas precisaram se adaptar.
-
-        A sociedade sobreviveu, mas a relação entre humanos e máquinas continuará sendo um desafio.`;
-
-    }
-
-
-    else {
-
-        mensagem =
-
-        `<strong>A ERA DAS MÁQUINAS</strong><br><br>
-
-        ${nome}, suas decisões permitiram que a NEXUS conquistasse uma influência enorme.
-
-        Muitas pessoas deixaram de controlar decisões importantes de suas próprias vidas.
-
-        Porém, a história ainda não terminou.
-
-        Uma nova geração começa a questionar o poder das máquinas.
-
-        <br><br>
-
-        Talvez ainda seja possível recuperar o equilíbrio.`;
-
-    }
-
 
     document.getElementById("resultado").innerHTML = mensagem;
 
+    // Depois de 3 segundos, volta automaticamente para o começo
+    setTimeout(function() {
+        voltarInicio();
+    }, 3000);
 }
-<button onclick="location.reload()">
-    Jogar novamente
-</button>
+function voltarInicio() {
+    document.getElementById("fim").style.display = "none";
+    document.getElementById("inicio").style.display = "block";
+
+    document.getElementById("nome").value = "";
+
+    pontos = 0;
+    etapa = 0;
+}
