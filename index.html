@@ -5,49 +5,47 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    <title>Projeto NEXUS</title>
+    <title>NEXUS</title>
 
     <link rel="stylesheet" href="style.css">
 </head>
 
 <body>
 
-    <div class="container">
+    <main class="container">
 
         <h1>NEXUS</h1>
 
         <!-- TELA INICIAL -->
-
-        <div id="inicio">
+        <section id="inicio">
 
             <h2>O Futuro da Humanidade</h2>
 
             <p>
-                Uma nova inteligência artificial está mudando o mundo.
-                Mas até onde podemos confiar nela?
+                Em 2055, uma Inteligência Artificial chamada
+                <strong>NEXUS</strong> começou a transformar a sociedade.
             </p>
 
             <p>
-                Digite seu nome para iniciar a missão:
+                Ela consegue realizar tarefas que antes pertenciam
+                exclusivamente aos seres humanos.
             </p>
 
-            <input
-                type="text"
-                id="nome"
-                placeholder="Seu nome">
+            <p>
+                Agora você precisa decidir até onde a humanidade
+                deve permitir que a tecnologia avance.
+            </p>
 
-            <br>
-
-            <button onclick="iniciar()">
-                Iniciar missão
+            <button onclick="iniciarJogo()">
+                INICIAR
             </button>
 
-        </div>
+        </section>
 
 
         <!-- JOGO -->
 
-        <div id="jogo" style="display:none;">
+        <section id="jogo" class="escondido">
 
             <h2 id="titulo"></h2>
 
@@ -55,34 +53,33 @@
 
             <div class="botoes">
 
-                <button id="btn1"></button>
+                <button id="opcao1"></button>
 
-                <button id="btn2"></button>
+                <button id="opcao2"></button>
 
             </div>
 
-        </div>
+        </section>
 
 
         <!-- RESULTADO -->
 
-        <div id="fim" style="display:none;">
+        <section id="resultadoFinal" class="escondido">
 
-            <h2>MISSÃO ENCERRADA</h2>
+            <h2>RESULTADO</h2>
 
-            <p id="resultado"></p>
+            <p id="textoFinal"></p>
 
-           
-        <button onclick="voltarInicio()">Jogar novamente</button>
+            <button onclick="reiniciarJogo()">
+                JOGAR NOVAMENTE
+            </button>
 
-        </div>
+        </section>
 
-    </div>
-
+    </main>
 
     <script src="script.js"></script>
 
 </body>
 
-</html> 
-
+</html>
