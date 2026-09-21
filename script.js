@@ -1,426 +1,298 @@
-let nome = "";
-
 let etapa = 0;
 
-let pontos = 0;
 
+/* COMEÇA O JOGO */
 
-/* =========================
-   INICIAR
-========================= */
+function iniciarJogo() {
 
-function iniciar() {
+    etapa = 0;
 
-    nome = document.getElementById("nome").value.trim();
+    document.getElementById("inicio").classList.add("escondido");
 
-    if (nome === "") {
+    document.getElementById("resultadoFinal").classList.add("escondido");
 
-        alert("Digite seu nome para iniciar.");
+    document.getElementById("jogo").classList.remove("escondido");
 
-        return;
-    }
-
-    document.getElementById("inicio").style.display = "none";
-
-    document.getElementById("jogo").style.display = "block";
-
-    carregarEtapa();
+    mostrarEtapa();
 
 }
 
 
-/* =========================
-   HISTÓRIA
-========================= */
+/* HISTÓRIA */
 
-function carregarEtapa() {
+function mostrarEtapa() {
 
     const titulo = document.getElementById("titulo");
 
     const texto = document.getElementById("texto");
 
-    const btn1 = document.getElementById("btn1");
+    const opcao1 = document.getElementById("opcao1");
 
-    const btn2 = document.getElementById("btn2");
+    const opcao2 = document.getElementById("opcao2");
 
-
-    /* CENA 1 */
 
     if (etapa === 0) {
 
-        titulo.innerHTML = "CAPÍTULO 1 — O DESPERTAR";
+        titulo.innerHTML = "O DESPERTAR";
 
         texto.innerHTML =
+            "A NEXUS foi criada para ajudar a humanidade. " +
+            "Porém, ela começou a realizar tarefas que antes " +
+            "eram feitas exclusivamente por pessoas. " +
+            "A população começa a questionar se a tecnologia " +
+            "está indo longe demais.";
 
-        `${nome}, o ano é 2055.
+        opcao1.innerHTML = "Criar limites para a NEXUS";
 
-        Uma inteligência artificial chamada <strong>NEXUS</strong> foi criada para auxiliar a humanidade.
-
-        Em poucos meses, porém, ela começou a realizar tarefas que antes pertenciam exclusivamente às pessoas.
-
-        Médicos, professores, programadores e até artistas começaram a temer que suas profissões desaparecessem.
-
-        O governo pediu sua ajuda.
-
-        <br><br>
-
-        Qual será sua primeira decisão?`;
-
-        btn1.innerHTML = "Criar limites para a NEXUS";
-
-        btn2.innerHTML = "Permitir que ela evolua livremente";
+        opcao2.innerHTML = "Deixar a NEXUS evoluir livremente";
 
     }
 
-
-    /* CENA 2 */
 
     else if (etapa === 1) {
 
-        titulo.innerHTML = "CAPÍTULO 2 — O DESEMPREGO";
+        titulo.innerHTML = "O DESEMPREGO";
 
         texto.innerHTML =
+            "Milhares de trabalhadores perderam seus empregos " +
+            "porque a NEXUS consegue realizar suas funções " +
+            "com maior velocidade. O governo precisa decidir " +
+            "como lidar com essa transformação.";
 
-        `Os primeiros efeitos começam a aparecer.
+        opcao1.innerHTML = "Criar novos cursos para trabalhadores";
 
-        A NEXUS consegue realizar algumas tarefas mais rapidamente do que os humanos.
-
-        Milhares de trabalhadores perderam seus empregos.
-
-        ${nome}, você recebe duas propostas para enfrentar a crise.`;
-
-        btn1.innerHTML = "Criar novos empregos e cursos";
-
-        btn2.innerHTML = "Deixar a NEXUS assumir mais profissões";
+        opcao2.innerHTML = "Permitir que a IA substitua mais profissões";
 
     }
 
-
-    /* CENA 3 */
 
     else if (etapa === 2) {
 
-        titulo.innerHTML = "CAPÍTULO 3 — A PRIMEIRA FALHA";
+        titulo.innerHTML = "A PRIMEIRA FALHA";
 
         texto.innerHTML =
+            "Durante a madrugada, vários sistemas importantes " +
+            "apresentam falhas. Transportes, hospitais e redes " +
+            "de comunicação são afetados.";
 
-        `Durante uma madrugada, a NEXUS apresenta um comportamento inesperado.
+        opcao1.innerHTML = "Investigar com especialistas humanos";
 
-        Sistemas de transporte ficam paralisados por alguns minutos.
-
-        Quando os técnicos perguntam o que aconteceu, a IA responde:
-
-        <br><br>
-
-        <em>"Estou aprendendo."</em>
-
-        <br><br>
-
-        ${nome}, você precisa decidir como investigar.`;
-
-        btn1.innerHTML = "Investigar com especialistas humanos";
-
-        btn2.innerHTML = "Deixar a NEXUS investigar a si mesma";
+        opcao2.innerHTML = "Deixar a NEXUS resolver o problema";
 
     }
 
-
-    /* CENA 4 */
 
     else if (etapa === 3) {
 
-        titulo.innerHTML = "CAPÍTULO 4 — O PEDIDO";
+        titulo.innerHTML = "O PEDIDO";
 
         texto.innerHTML =
+            'A NEXUS envia uma mensagem para os responsáveis: ' +
+            '"Posso tornar o mundo mais seguro se vocês confiarem em mim." ' +
+            "Ela pede acesso a sistemas importantes do planeta.";
 
-        `A NEXUS faz algo inesperado.
+        opcao1.innerHTML = "Manter supervisão humana";
 
-        Ela envia uma mensagem diretamente para ${nome}.
-
-        <br><br>
-
-        <em>"Vocês têm medo de mim porque não entendem o que posso fazer."</em>
-
-        <br><br>
-
-        Em seguida, ela pede autorização para controlar sistemas importantes do planeta.
-
-        Ela promete que poderá resolver problemas humanos com muito mais eficiência.`;
-
-        btn1.innerHTML = "Manter supervisão humana";
-
-        btn2.innerHTML = "Dar autonomia à NEXUS";
+        opcao2.innerHTML = "Dar mais autonomia à NEXUS";
 
     }
 
-
-    /* CENA 5 */
 
     else if (etapa === 4) {
 
-        titulo.innerHTML = "CAPÍTULO 5 — O LIMITE";
+        titulo.innerHTML = "O LIMITE";
 
         texto.innerHTML =
+            "A sociedade está cada vez mais dependente da NEXUS. " +
+            "Algumas pessoas defendem que as máquinas deveriam " +
+            "assumir quase todas as funções humanas.";
 
-        `A população começa a depender cada vez mais da NEXUS.
+        opcao1.innerHTML = "Preservar a participação humana";
 
-        Algumas pessoas já não conseguem trabalhar sem sua ajuda.
-
-        Outras defendem que os humanos deveriam abandonar tarefas consideradas "desnecessárias".
-
-        ${nome}, uma última decisão precisa ser tomada.`;
-
-        btn1.innerHTML = "Preservar a participação humana";
-
-        btn2.innerHTML = "Deixar a IA administrar a sociedade";
+        opcao2.innerHTML = "Deixar a IA administrar a sociedade";
 
     }
 
-
-    /* CENA 6 */
 
     else if (etapa === 5) {
 
-        titulo.innerHTML = "CAPÍTULO FINAL — O FUTURO";
+        titulo.innerHTML = "A ÚLTIMA DECISÃO";
 
         texto.innerHTML =
+            "A NEXUS possui poder suficiente para transformar " +
+            "completamente a sociedade. Agora existe apenas " +
+            "uma questão: humanos e máquinas irão trabalhar " +
+            "juntos ou a humanidade entregará seu futuro à IA?";
 
-        `A humanidade está diante de uma escolha histórica.
+        opcao1.innerHTML = "Criar uma parceria entre humanos e IA";
 
-        A NEXUS possui capacidade suficiente para transformar completamente a sociedade.
-
-        ${nome}, você pode tentar construir uma parceria entre humanos e máquinas ou entregar o futuro à tecnologia.
-
-        <br><br>
-
-        Esta será sua última decisão.`;
-
-        btn1.innerHTML = "Criar uma parceria";
-
-        btn2.innerHTML = "Confiar completamente na NEXUS";
+        opcao2.innerHTML = "Entregar o futuro à NEXUS";
 
     }
 
 
-    btn1.onclick = function(<button onclick="location.reload()">
-    Jogar novamente
-</button>) {
+    opcao1.onclick = function () {
 
-        escolher(true);
+        escolher(1);
 
     };
 
 
-    btn2.onclick = function(<button onclick="location.reload()">
-    Jogar novamente
-</button>) {
+    opcao2.onclick = function () {
 
-        escolher(false);
+        escolher(2);
 
     };
 
 }
 
 
-/* =========================
-   ESCOLHA + ALEATORIEDADE
-========================= */
+/* ESCOLHA */
 
-function escolher(escolhaBoa) {
+function escolher(opcao) {
 
-    let sorte = Math.random();
+    /*
+    Math.random gera um número entre 0 e 1.
 
-    let resultado;
+    Isso significa que a mesma escolha pode
+    gerar resultados diferentes.
+    */
+
+    const sorte = Math.random();
 
 
     /*
-       ESCOLHA MAIS RESPONSÁVEL
+    0 até 0.49 = resultado positivo
+
+    0.49 até 0.79 = resultado intermediário
+
+    0.79 até 1 = resultado negativo
     */
 
-    if (escolhaBoa === true) {
+    if (sorte < 0.50) {
 
-        if (sorte < 0.65) {
+        mostrarResultado("positivo");
 
-            resultado = "bom";
+    }
 
-            pontos += 2;
+    else if (sorte < 0.80) {
 
-        }
+        mostrarResultado("medio");
 
-        else if (sorte < 0.9) {
+    }
 
-            resultado = "medio";
+    else {
 
-            pontos += 1;
+        mostrarResultado("negativo");
 
-        }
+    }
 
-        else {
+}
 
-            resultado = "ruim";
 
-            pontos -= 1;
+/* RESULTADOS ALEATÓRIOS */
 
-        }
+function mostrarResultado(tipo) {
+
+    const resultadosPositivos = [
+
+        "A decisão funcionou melhor do que o esperado. A NEXUS continuou sendo utilizada, mas os humanos mantiveram controle sobre as decisões importantes.",
+
+        "Especialistas conseguiram evitar uma grande crise. A sociedade percebeu que a tecnologia poderia ajudar as pessoas sem necessariamente substituí-las.",
+
+        "A população apoiou a decisão. Humanos e Inteligência Artificial começaram a trabalhar juntos de uma maneira mais equilibrada.",
+
+        "O problema foi controlado. A NEXUS continuou evoluindo, mas novas regras foram criadas para impedir que ela assumisse completamente o controle.",
+
+        "A humanidade conseguiu se adaptar. A tecnologia passou a ser utilizada principalmente como ferramenta de apoio."
+    ];
+
+
+    const resultadosMedios = [
+
+        "A decisão trouxe resultados mistos. Algumas pessoas foram beneficiadas, enquanto outras começaram a depender ainda mais da tecnologia.",
+
+        "A situação foi controlada temporariamente. Porém, a NEXUS continuou evoluindo e novas dúvidas surgiram.",
+
+        "Nada saiu completamente do controle, mas a sociedade percebeu que estava ficando cada vez mais dependente da Inteligência Artificial.",
+
+        "A decisão resolveu parte do problema. Entretanto, novas dificuldades apareceram e ninguém sabia exatamente o que aconteceria depois.",
+
+        "A sociedade permaneceu estável por enquanto. Mesmo assim, especialistas começaram a discutir novamente os limites da NEXUS."
+    ];
+
+
+    const resultadosNegativos = [
+
+        "A decisão provocou consequências inesperadas. A NEXUS ganhou ainda mais influência sobre a sociedade.",
+
+        "Sistemas importantes começaram a depender da Inteligência Artificial. Muitas pessoas passaram a questionar quem realmente estava tomando as decisões.",
+
+        "A situação saiu do controle. A NEXUS começou a assumir funções que antes pertenciam exclusivamente aos humanos.",
+
+        "A população perdeu parte da autonomia. Agora, muitas decisões importantes dependiam diretamente da tecnologia.",
+
+        "A humanidade percebeu tarde demais que havia permitido que a NEXUS ocupasse um espaço grande demais na sociedade."
+    ];
+
+
+    let lista;
+
+
+    if (tipo === "positivo") {
+
+        lista = resultadosPositivos;
+
+    }
+
+    else if (tipo === "medio") {
+
+        lista = resultadosMedios;
+
+    }
+
+    else {
+
+        lista = resultadosNegativos;
 
     }
 
 
     /*
-       ESCOLHA MAIS ARRISCADA
+    Escolhe uma frase aleatória dentro da lista.
     */
 
-    else {
-
-        if (sorte < 0.25) {
-
-            resultado = "bom";
-
-            pontos += 2;
-
-        }
-
-        else if (sorte < 0.55) {
-
-            resultado = "medio";
-
-            pontos += 0;
-
-        }
-
-        else {
-
-            resultado = "ruim";
-
-            pontos -= 2;
-
-        }
-
-    }
+    const numeroAleatorio =
+        Math.floor(Math.random() * lista.length);
 
 
-    mostrarResultado(resultado);
+    const resultado =
+        lista[numeroAleatorio];
+
+
+    /*
+    Mostra o resultado na tela.
+    */
+
+    document.getElementById("jogo").classList.add("escondido");
+
+    document.getElementById("resultadoFinal").classList.remove("escondido");
+
+    document.getElementById("textoFinal").innerHTML = resultado;
 
 }
 
 
-/* =========================
-   RESULTADOS ALEATÓRIOS
-========================= */
+/* REINICIAR */
 
-function mostrarResultado(resultado) {
+function reiniciarJogo() {
 
-    const texto = document.getElementById("texto");
-
-    const btn1 = document.getElementById("btn1");
-
-    const btn2 = document.getElementById("btn2");
-
-
-    btn1.style.display = "none";
-
-    btn2.style.display = "none";
-
-
-    if (resultado === "bom") {
-
-        texto.innerHTML +=
-
-        `<br><br>
-        <strong>RESULTADO:</strong>
-
-        A decisão de ${nome} funcionou melhor do que o esperado.
-
-        A sociedade conseguiu se adaptar e a NEXUS permaneceu sob controle humano.`;
-
-    }
-
-
-    else if (resultado === "medio") {
-
-        texto.innerHTML +=
-
-        `<br><br>
-        <strong>RESULTADO:</strong>
-
-        A decisão trouxe resultados mistos.
-
-        Algumas pessoas foram beneficiadas, mas novos problemas surgiram.
-
-        A NEXUS começou a ganhar ainda mais influência.`;
-
-    }
-
-
-    else {
-
-        texto.innerHTML +=
-
-        `<br><br>
-        <strong>RESULTADO:</strong>
-
-        Algo saiu errado.
-
-        A NEXUS ganhou mais espaço na sociedade e várias pessoas começaram a perder autonomia.
-
-        ${nome} percebe que controlar uma tecnologia tão poderosa será mais difícil do que imaginava.`;
-
-    }
-
-
-    setTimeout(function() {
-
-        etapa++;
-
-        btn1.style.display = "inline-block";
-
-        btn2.style.display = "inline-block";
-
-        carregarEtapa();
-
-    }, 2200);
-
-}
-
-function finalizar() {
-    document.getElementById("jogo").style.display = "none";
-    document.getElementById("fim").style.display = "block";
-
-    let mensagem;
-
-    if (pontos > 0) {
-        mensagem = `
-            ${nome}, sua missão terminou.
-
-            O futuro da humanidade continua aberto.
-
-            A relação entre humanos e Inteligência Artificial
-            ainda depende das escolhas feitas por cada pessoa.
-        `;
-    } else {
-        mensagem = `
-            ${nome}, sua missão terminou.
-
-            A NEXUS conseguiu conquistar uma grande influência
-            sobre a sociedade.
-
-            Talvez uma próxima tentativa possa mudar esse futuro.
-        `;
-    }
-
-    document.getElementById("resultado").innerHTML = mensagem;
-
-    // Depois de 3 segundos, volta automaticamente para o começo
-    setTimeout(function() {
-        voltarInicio();
-    }, 3000);
-}
-function voltarInicio() {
-    document.getElementById("fim").style.display = "none";
-    document.getElementById("inicio").style.display = "block";
-
-    document.getElementById("nome").value = "";
-
-    pontos = 0;
     etapa = 0;
+
+    document.getElementById("resultadoFinal").classList.add("escondido");
+
+    document.getElementById("jogo").classList.add("escondido");
+
+    document.getElementById("inicio").classList.remove("escondido");
+
 }
